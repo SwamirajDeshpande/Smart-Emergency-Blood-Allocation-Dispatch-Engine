@@ -86,20 +86,15 @@ The core assessed logic is implemented manually in `backend/app/dsa/`.
 
 ## 🛠️ Tech Stack
 
-| Layer | Technology | Purpose |
-|---|---|---|
-| Frontend | React 18 + Vite | Interactive user interface |
-| Routing | React Router | Page navigation |
-| Icons | Lucide Icons | Consistent UI icons |
-| Styling | Hand-written CSS | Responsive design and styling |
-| Backend | FastAPI | REST API and business logic |
-| Language | Python 3.10+ | Backend and DSA implementation |
-| Validation | Pydantic v2 | Request and data validation |
-| ORM | SQLAlchemy 2.0 | Database operations |
-| Database | SQLite | Local persistent storage |
-| Testing | pytest | Automated testing |
-| API Documentation | Swagger UI | Interactive API documentation |
-
+Layer	Technology	Why
+Frontend	React 18 + Vite	Fast dev server, simple component model
+Routing / icons	React Router, Lucide icons	Page navigation, consistent icon set
+Styling	Hand-written CSS (design tokens, responsive)	No extra build tooling to explain
+Backend	FastAPI (Python 3.10+)	Very little boilerplate, automatic validation, free API docs at /docs
+Validation	Pydantic v2	Rejects bad blood groups, urgency, quantities, dates
+ORM	SQLAlchemy 2.0	Same code runs on SQLite, PostgreSQL, MySQL…
+Database	SQLite (development)	Zero setup, one file (backend/bloodbank.db)
+Tests	pytest + FastAPI TestClient	82 automated tests
 ---
 
 ## 🏗️ System Architecture
