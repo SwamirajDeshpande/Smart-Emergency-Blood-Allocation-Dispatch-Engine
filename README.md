@@ -142,39 +142,41 @@ flowchart TD
 ## 📂 Project Structure
 
 ```text
-smart-emergency-blood-allocation/
-│
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── routes/
-│   │   ├── services/
-│   │   └── styles/
-│   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-│
-├── backend/
-│   ├── app/
-│   │   ├── main.py
-│   │   ├── api/
-│   │   ├── models/
-│   │   ├── schemas/
-│   │   ├── services/
-│   │   ├── database/
-│   │   └── dsa/
-│   │       ├── priority_queue.py
-│   │       ├── sorting.py
-│   │       ├── searching.py
-│   │       └── allocation.py
-│   │
-│   ├── tests/
-│   ├── requirements.txt
-│   └── bloodbank.db
-│
+dsa_project_cp/
 ├── README.md
-└── .gitignore
+├── setup.bat · run-backend.bat · run-frontend.bat
+├── backend/
+│   ├── requirements.txt · pytest.ini
+│   ├── app/
+│   │   ├── main.py              FastAPI app, start-up (create tables, seed, rebuild structures)
+│   │   ├── config.py            DATABASE_URL (the only DB setting)
+│   │   ├── database.py          SQLAlchemy engine / session
+│   │   ├── models.py            ORM tables
+│   │   ├── schemas.py           Pydantic request validation
+│   │   ├── errors.py            centralised error handling (one JSON shape)
+│   │   ├── serializers.py       ORM row -> JSON dict
+│   │   ├── seed.py              synthetic demo data + reset
+│   │   ├── dsa/                 ★ generic, hand-written data structures & algorithms
+│   │   │   ├── binary_heap.py       array-based binary heap
+│   │   │   ├── fefo_inventory.py    one min-heap per blood group
+│   │   │   ├── merge_sort.py        stable, divide & conquer
+│   │   │   ├── quick_sort.py        median-of-three, in place
+│   │   │   ├── searching.py         linear + binary search
+│   │   │   └── hash_table.py        separate chaining
+│   │   ├── domain/              application rules (no HTTP, no UI)
+│   │   │   ├── compatibility.py     8×8 matrix + lookup
+│   │   │   ├── priority.py          THE request comparator
+│   │   │   ├── allocation_service.py  Process-Next algorithm (transactional)
+│   │   │   ├── state.py             in-memory structures rebuilt from the DB
+│   │   │   ├── sorting.py · settings.py
+│   │   └── routes/              HTTP only: inventory, requests, dispatches, analytics, dsa_lab, admin
+│   └── tests/                   pytest suite
+└── frontend/
+    ├── package.json · vite.config.js (proxies /api -> :8000)
+    └── src/
+        ├── App.jsx · main.jsx · api.js · index.css
+        ├── components/          ui.jsx (badges, modal, toasts…), HeapViz.jsx, ProcessResult.jsx
+        └── pages/               Dashboard, Inventory, Requests, Dispatches, DsaLab, About, Settings
 ```
 
 *The structure above represents the intended organization; adjust filenames to match the actual repository.*
