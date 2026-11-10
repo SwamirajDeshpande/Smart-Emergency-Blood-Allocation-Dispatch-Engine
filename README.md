@@ -86,15 +86,24 @@ The core assessed logic is implemented manually in `backend/app/dsa/`.
 
 ## 🛠️ Tech Stack
 
-Layer	Technology	Why
-Frontend	React 18 + Vite	Fast dev server, simple component model
-Routing / icons	React Router, Lucide icons	Page navigation, consistent icon set
-Styling	Hand-written CSS (design tokens, responsive)	No extra build tooling to explain
-Backend	FastAPI (Python 3.10+)	Very little boilerplate, automatic validation, free API docs at /docs
-Validation	Pydantic v2	Rejects bad blood groups, urgency, quantities, dates
-ORM	SQLAlchemy 2.0	Same code runs on SQLite, PostgreSQL, MySQL…
-Database	SQLite (development)	Zero setup, one file (backend/bloodbank.db)
-Tests	pytest + FastAPI TestClient	82 automated tests
+## 🛠️ Tech Stack
+
+| Layer | Technology | Why |
+|---|---|---|
+| Frontend | **React 18 + Vite** | Fast development server and simple component model |
+| Routing / Icons | React Router, Lucide Icons | Page navigation and consistent icon set |
+| Styling | Hand-written CSS (Design Tokens, Responsive) | No additional build tooling required |
+| Backend | **FastAPI (Python 3.10+)** | Minimal boilerplate, automatic validation, and API documentation |
+| Validation | **Pydantic v2** | Validates blood groups, urgency levels, quantities, and dates |
+| ORM | **SQLAlchemy 2.0** | Database abstraction supporting SQLite, PostgreSQL, and MySQL |
+| Database | **SQLite (Development)** | Zero setup and local database file at `backend/bloodbank.db` |
+| Testing | **pytest + FastAPI TestClient** | 82 automated backend tests |
+
+### 🔧 Core DSA Implementation
+
+The assessed DSA implementation is located in `backend/app/dsa/` and uses **only the Python standard library**.
+
+No built-in sorting or priority-queue functions are used in the assessed algorithmic logic.
 ---
 
 ## 🏗️ System Architecture
