@@ -346,7 +346,7 @@ All blood inventory, hospital requests, compatibility rules, and dispatch operat
 
 **This application is not intended for real-world medical, blood-bank, or transfusion use.**
 
----
+-----
 
 ⭐ If you find this project interesting, consider starring the repository.
 
