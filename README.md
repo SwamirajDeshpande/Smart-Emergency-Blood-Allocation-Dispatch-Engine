@@ -2,7 +2,7 @@
 
 **Prioritize urgent requests. Allocate compatible stock. Reduce expiry waste.**
 
-A full-stack Data Structures & Algorithms (DSA) capstone project that simulates intelligent blood allocation and emergency dispatch for hospitals. The system processes hospital blood requests based on urgency, blood-group compatibility, available inventory, and expiry dates using manually implemented data structures and algorithms.
+A full-stack Data Structures and Algorithms (DSA) capstone project that simulates intelligent blood allocation and emergency dispatch for hospitals. The system processes hospital blood requests based on urgency, blood-group compatibility, available inventory, and expiry dates using manually implemented data structures and algorithms.
 
 > ⚠️ **Educational Simulation Only:** This project uses synthetic data and a simplified blood-group compatibility table for educational purposes. It is not clinical decision-support software and must never be used for real blood transfusion decisions.
 
